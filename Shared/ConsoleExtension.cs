@@ -4,7 +4,7 @@ public static class ConsoleExtension
 {
     public static int GetInt(string message)
     {
-        Console.WriteLine(message);
+        Console.Write(message);
         var numberString = Console.ReadLine();
         if (int.TryParse(numberString, out int numberInt))
         {
@@ -12,6 +12,37 @@ public static class ConsoleExtension
         }
 
         return 0;
+    }
+
+    public static float GetFloat(string message)
+    {
+        Console.Write(message);
+        var numberString = Console.ReadLine();
+        if (float.TryParse(numberString, out float numberFloat))
+        {
+            return numberFloat;
+        }
+
+        return 0;
+    }
+
+    public static decimal GetDecimal(string message)
+    {
+        Console.Write(message);
+        var numberString = Console.ReadLine();
+        if (decimal.TryParse(numberString, out decimal numberDecimal))
+        {
+            return numberDecimal;
+        }
+
+        return 0;
+    }
+
+    public static string? GetString(string message)
+    {
+        Console.Write(message);
+        var text = Console.ReadLine();
+        return text;
     }
 
     public static string? GetValidOptions(string message, List<string> options)
