@@ -41,12 +41,10 @@ do
     var ce = CalculateExhibitionCost(tp, tc, ma, ca);
 
     var vrp = (cc + ca + ce) * pdp;
-    var vrv = tp.Equals("n", StringComparison.CurrentCultureIgnoreCase)
-        ? vrp * 1.20m
-        : vrp * 1.40m;
+    var vrv = tp.Equals("n", StringComparison.CurrentCultureIgnoreCase) ? vrp * 1.20m : vrp * 1.40m;
 
     Console.WriteLine($"Costos de almacenamiento..............................................: {ca,15:C2}");
-    Console.WriteLine($"Porcentaje de depreciación............................................: {pdp,15:N2}");
+    Console.WriteLine($"Porcentaje de depreciación............................................:   {pdp,15:P2}");
     Console.WriteLine($"Costo de exhibición...................................................: {ce,15:C2}");
     Console.WriteLine($"Valor producto........................................................: {vrp,15:C2}");
     Console.WriteLine($"Valor venta...........................................................: {vrv,15:C2}");
@@ -61,7 +59,7 @@ do
 Console.WriteLine("Game over.");
 
 
-// ================= FUNCIONES =================
+//  FUNCIONES 
 
 decimal CalculateStorageCost(decimal cc, string tp, string tc, int pc, int pa, decimal vol)
 {
