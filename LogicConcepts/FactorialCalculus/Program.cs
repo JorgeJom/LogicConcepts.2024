@@ -6,14 +6,9 @@ var options = new List<string> { "s", "n" };
 do
 {
     var n = ConsoleExtension.GetInt("Ingrese número: ");
-    long fact = 1;
+    long factorial = (long)MyMath.Factorial(n);
 
-    for (int i = 1; i <= n; i++) 
-    {
-        fact *= i;
-    }
-
-    Console.WriteLine($"El factorial es: {fact}");
+    Console.WriteLine($"El factorial es: {factorial:N0}");
 
     do
     {
